@@ -7,7 +7,7 @@ def load_environment(**kwargs):
     rule = vf.Rubric(funcs=[rule_editorial], weights=[1.0])
     judge = judge_editorial()
     combined = vf.RubricGroup([rule, judge])  # raw metrics kept even if weights later change
-    return .SingleTurnEnv(
+    return.SingleTurnEnv(
         dataset=kwargs["dataset"],
         parser=parser,
         rubric=combined,
